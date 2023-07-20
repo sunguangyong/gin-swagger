@@ -1,17 +1,24 @@
 package ginSwagger
 
 import (
+	"fmt"
+	"github.com/swaggo/gin-swagger/util"
 	"html/template"
 	"net/http"
 	"os"
 	"path/filepath"
 	"regexp"
+	"strings"
 	"sync"
 
 	"golang.org/x/net/webdav"
 
 	"github.com/gin-gonic/gin"
 	"github.com/swaggo/swag"
+)
+
+const(
+	BashPath = "../docs"
 )
 
 type swaggerConfig struct {
@@ -107,6 +114,10 @@ func Oauth2DefaultClientID(oauth2DefaultClientID string) func(*Config) {
 
 // WrapHandler wraps `http.Handler` into `gin.HandlerFunc`.
 func WrapHandler(handler *webdav.Handler, options ...func(*Config)) gin.HandlerFunc {
+	//ctx.Request.RequestURI
+	//urlArry := strings.Split()
+	//fileName := matches[2]
+
 	var config = Config{
 		URL:                      "doc.json",
 		DocExpansion:             "list",
@@ -121,7 +132,6 @@ func WrapHandler(handler *webdav.Handler, options ...func(*Config)) gin.HandlerF
 	for _, c := range options {
 		c(&config)
 	}
-
 	return CustomWrapHandler(&config, handler)
 }
 
@@ -150,16 +160,29 @@ func CustomWrapHandler(config *Config, handler *webdav.Handler) gin.HandlerFunc 
 		}
 
 		matches := matcher.FindStringSubmatch(ctx.Request.RequestURI)
+		urlArry := strings.Split(ctx.Request.RequestURI, "/")
 
-		if len(matches) != 3 {
+		if len(matches) != 3 && len(urlArry) != 4 {
 			ctx.String(http.StatusNotFound, http.StatusText(http.StatusNotFound))
 
 			return
 		}
 
-		path := matches[2]
+		var (
+			path string
+			prefix string
+		)
+
+		if len(matches) == 0 {
+			path = urlArry[3]
+			prefix = fmt.Sprintf("/%s/%s",urlArry[1],urlArry[2])
+		} else {
+			path = matches[2]
+			prefix = matches[1]
+		}
+
 		once.Do(func() {
-			handler.Prefix = matches[1]
+			handler.Prefix = prefix
 		})
 
 		switch filepath.Ext(path) {
@@ -175,18 +198,19 @@ func CustomWrapHandler(config *Config, handler *webdav.Handler) gin.HandlerFunc 
 			ctx.Header("Content-Type", "application/json; charset=utf-8")
 		}
 
-		switch path {
-		case "index.html":
+		switch filepath.Ext(path) {
+		case ".html":
 			_ = index.Execute(ctx.Writer, config.toSwaggerConfig())
-		case "doc.json":
-			doc, err := swag.ReadDoc(config.InstanceName)
+		case ".json":
+			//doc, err := swag.ReadDoc(config.InstanceName)
+			fileName := fmt.Sprintf("%s/%s",BashPath, path)
+			doc,err := util.ReadJSONFile(fileName)
 			if err != nil {
 				ctx.AbortWithStatus(http.StatusInternalServerError)
-
 				return
 			}
-
 			ctx.String(http.StatusOK, doc)
+
 		default:
 			handler.ServeHTTP(ctx.Writer, ctx.Request)
 		}

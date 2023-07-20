@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
-	"github.com/swaggo/gin-swagger"
+	ginSwagger "github.com/swaggo/gin-swagger"
 
 	"github.com/swaggo/gin-swagger/example/basic/api"
 

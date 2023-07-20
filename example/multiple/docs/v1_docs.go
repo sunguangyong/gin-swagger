@@ -85,3 +85,25 @@ var SwaggerInfov1 = &swag.Spec{
 func init() {
 	swag.Register(SwaggerInfov1.InstanceName(), SwaggerInfov1)
 }
+
+func GetSwag(name string) (swagger swag.Swagger) {
+	var template string
+	if name == "doc1.json" {
+		template = docTemplatev1
+	} else {
+		template = docTemplatev2
+	}
+	SwaggerInfov := &swag.Spec{
+		Version:          "1.0",
+		Host:             "",
+		BasePath:         "/v1",
+		Schemes:          []string{},
+		Title:            "Swagger Example API",
+		Description:      "This is a sample server.",
+		InfoInstanceName: name,
+		SwaggerTemplate:  template,
+	}
+
+	return SwaggerInfov
+
+}

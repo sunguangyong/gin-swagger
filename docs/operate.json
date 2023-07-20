@@ -1,0 +1,2806 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "basePath": "/api",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/news/chaintagcreate": {
+      "post": {
+        "summary": "[web] 设置标签",
+        "operationId": "NewsChainTagCreate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/NewsChainTagCreateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewsChainTagCreateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/news/chaintagget": {
+      "post": {
+        "summary": "[web] 设置标签",
+        "operationId": "NewsChainTagGet",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/NewsChainTagResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewsChainTagGetRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/news/dropdown": {
+      "post": {
+        "summary": "[web] 下拉框",
+        "operationId": "NewsDropdown",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/NewsDropdownResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 下拉列表",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewsDropdownReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/news/export": {
+      "post": {
+        "summary": "[web]Token信息监测列表列表导出",
+        "operationId": "NewsListExport",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/NewsExportResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "new list 导出",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewsExportRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/news/list": {
+      "post": {
+        "summary": "[web]Token信息监测列表列表",
+        "operationId": "NewsList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/NewsListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "new list 请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewsListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/news/report": {
+      "post": {
+        "summary": "[api]资讯网站信息上报",
+        "operationId": "reportNews",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CrawlerNewsResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "爬虫资讯信息list请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CrawlerNewsListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/statistics/allplatforms": {
+      "post": {
+        "summary": "[api]平台监测管理获取",
+        "operationId": "allPlatforms",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AllPlatformResponseList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "api盘口平台请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AllPlatformRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/statistics/platforms": {
+      "post": {
+        "summary": "[web]现货盘口监测平台管理",
+        "operationId": "platforms",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/PlatformResponseList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "盘口平台请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PlatformRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/statistics/platformscreate": {
+      "post": {
+        "summary": "[web]现货盘口监测平台管理创建",
+        "operationId": "platformsCreate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/PlatformCreateRes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "监测平台创建请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PlatformCreateReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/statistics/platformsdelete": {
+      "post": {
+        "summary": "[web]现货盘口监测平台管理删除",
+        "operationId": "platformsDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/PlatformDeleteRes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "监测平台删除请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PlatformDeleteReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/statistics/platformsupdate": {
+      "post": {
+        "summary": "[web]现货盘口监测平台管理更新",
+        "operationId": "platformsUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/PlatformUpdateRes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "监测平台更改请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PlatformUpdateReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/statistics/spot": {
+      "post": {
+        "summary": "[api]其他交易所行情上报",
+        "operationId": "operate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SpotTickerResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SpotTickerRequestList"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/statistics/spotlist": {
+      "post": {
+        "summary": "[web] 现货盘口监测列表",
+        "operationId": "spotList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SpotListWebRes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "行情列表请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SpotListWebReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/statistics/spotlistexport": {
+      "post": {
+        "summary": "[web] 导出现货盘口监测列表",
+        "operationId": "spotListExport",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SpotListExportWebRes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 导出行情列表请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SpotListExportWebReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/statistics/transactionpair": {
+      "post": {
+        "summary": "[web] 现货盘口监测列表交易对下拉框 ",
+        "operationId": "TransactionPairList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/TransactionPairWebResList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 交易对下拉框",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TransactionPairWebReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/wallet/allplatforms": {
+      "post": {
+        "summary": "[api]获取全部的监测平台列表",
+        "operationId": "walAllPlatforms",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/WalAllPlatformResponseList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "钱包监管平台请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WalAllPlatformRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/wallet/dropdown": {
+      "post": {
+        "summary": "[web]钱包充提记录下拉框",
+        "operationId": "walletDropdown",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/WalletDropdownResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 下拉列表",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WalletDropdownReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/wallet/platforms": {
+      "post": {
+        "summary": "[web]钱包充提监测平台管理获取",
+        "operationId": "walPlatforms",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/WalPlatformResponseList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "钱包监管平台请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WalPlatformRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/wallet/platformscreate": {
+      "post": {
+        "summary": "[web]钱包充提监测平台管理创建",
+        "operationId": "walPlatformsCreate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/WalPlatformCreateRes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "钱包监管平台创建请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WalPlatformCreateReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/wallet/platformsdelete": {
+      "post": {
+        "summary": "[web]钱包充提监测平台管理删除",
+        "operationId": "walPlatformsDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/WalPlatformDeleteRes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "钱包监管平台删除请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WalPlatformDeleteReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/wallet/platformsupdate": {
+      "post": {
+        "summary": "[web]钱包充提监测平台管理更新",
+        "operationId": "walPlatformsUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/WalPlatformUpdateRes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "钱包监管平台修改请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WalPlatformUpdateReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/wallet/report": {
+      "post": {
+        "summary": "[api]钱包链上交易请求",
+        "operationId": "wal",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/WalBlockchainTradeResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "钱包链上交易请求集合",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WalBlockchainTradeRequestList"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/wallet/transferlist": {
+      "post": {
+        "summary": "[web]钱包充提记录监测列表",
+        "operationId": "walPlatformList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/WalPlatformWebListRes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "钱包平台充提列表请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WalPlatformWebReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/wallet/transferlistexport": {
+      "post": {
+        "summary": "[web]钱包充提记录监测列表导出",
+        "operationId": "walPlatformListExport",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/WalPlatformWebExcelRes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "钱包平台充提导出请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WalPlatformWebExcelReq"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "AllPlatformRequest": {
+      "type": "object",
+      "title": "AllPlatformRequest"
+    },
+    "AllPlatformResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ID"
+        },
+        "platformName": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "depth": {
+          "type": "integer",
+          "format": "int64",
+          "description": "深度 100"
+        },
+        "monitorStatus": {
+          "type": "integer",
+          "format": "int64",
+          "description": "监测状态  0关闭 1开启"
+        },
+        "instType": {
+          "type": "string",
+          "description": " 交易品类(spot：币币,swap：永续合约,FUTURES futu：交割合约,OPTION：期权)"
+        },
+        "createTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "创建时间"
+        },
+        "updateTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "更新时间"
+        }
+      },
+      "title": "AllPlatformResponse",
+      "required": [
+        "id",
+        "platformName",
+        "depth",
+        "monitorStatus",
+        "instType",
+        "createTime",
+        "updateTime"
+      ]
+    },
+    "AllPlatformResponseList": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PlatformResponse"
+          }
+        }
+      },
+      "title": "AllPlatformResponseList",
+      "required": [
+        "list"
+      ]
+    },
+    "ChainTagCreateRequest": {
+      "type": "object",
+      "properties": {
+        "chainTag": {
+          "type": "string"
+        },
+        "chainUrl": {
+          "type": "string"
+        },
+        "chainName": {
+          "type": "string"
+        }
+      },
+      "title": "ChainTagCreateRequest",
+      "required": [
+        "chainTag",
+        "chainUrl",
+        "chainName"
+      ]
+    },
+    "ChatRequest": {
+      "type": "object",
+      "properties": {
+        "chatName": {
+          "type": "string"
+        },
+        "chatUrl": {
+          "type": "string"
+        }
+      },
+      "title": "ChatRequest",
+      "required": [
+        "chatName",
+        "chatUrl"
+      ]
+    },
+    "CommunityRequest": {
+      "type": "object",
+      "properties": {
+        "communityName": {
+          "type": "string"
+        },
+        "communityUrl": {
+          "type": "string"
+        }
+      },
+      "title": "CommunityRequest",
+      "required": [
+        "communityName",
+        "communityUrl"
+      ]
+    },
+    "CrawlerNewsListRequest": {
+      "type": "object",
+      "properties": {
+        "news": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CrawlerNewsRequest"
+          }
+        }
+      },
+      "title": "CrawlerNewsListRequest",
+      "required": [
+        "news"
+      ]
+    },
+    "CrawlerNewsRequest": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "ticker": {
+          "type": "string"
+        },
+        "mainChain": {
+          "type": "string"
+        },
+        "contractName": {
+          "type": "string"
+        },
+        "contractUrl": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "lpv1": {
+          "type": "string"
+        },
+        "lpv2": {
+          "type": "string"
+        },
+        "webSiteSet": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WebSiteRequest"
+          }
+        },
+        "communitySet": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommunityRequest"
+          }
+        },
+        "chatSet": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChatRequest"
+          }
+        },
+        "explorerSet": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LinkRequest"
+          }
+        },
+        "uuidWebSite": {
+          "type": "string"
+        },
+        "webSiteSource": {
+          "type": "string"
+        }
+      },
+      "title": "CrawlerNewsRequest",
+      "required": [
+        "token",
+        "ticker",
+        "mainChain",
+        "contractName",
+        "contractUrl",
+        "price",
+        "lpv1",
+        "lpv2",
+        "webSiteSet",
+        "communitySet",
+        "chatSet",
+        "explorerSet",
+        "uuidWebSite",
+        "webSiteSource"
+      ]
+    },
+    "CrawlerNewsResponse": {
+      "type": "object",
+      "title": "CrawlerNewsResponse"
+    },
+    "Dropdown": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "title": "Dropdown",
+      "required": [
+        "value",
+        "label"
+      ]
+    },
+    "LinkRequest": {
+      "type": "object",
+      "properties": {
+        "explorerName": {
+          "type": "string"
+        },
+        "explorerUrl": {
+          "type": "string"
+        }
+      },
+      "title": "LinkRequest",
+      "required": [
+        "explorerName",
+        "explorerUrl"
+      ]
+    },
+    "NewsChainTagCreateRequest": {
+      "type": "object",
+      "properties": {
+        "chainTagList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChainTagCreateRequest"
+          }
+        }
+      },
+      "title": "NewsChainTagCreateRequest",
+      "required": [
+        "chainTagList"
+      ]
+    },
+    "NewsChainTagCreateResponse": {
+      "type": "object",
+      "title": "NewsChainTagCreateResponse"
+    },
+    "NewsChainTagGetRequest": {
+      "type": "object",
+      "title": "NewsChainTagGetRequest"
+    },
+    "NewsChainTagResponse": {
+      "type": "object",
+      "properties": {
+        "mainChainTag": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NewsDropdown"
+          }
+        }
+      },
+      "title": "NewsChainTagResponse",
+      "required": [
+        "mainChainTag"
+      ]
+    },
+    "NewsDropdown": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "title": "NewsDropdown",
+      "required": [
+        "value",
+        "label"
+      ]
+    },
+    "NewsDropdownReq": {
+      "type": "object",
+      "title": "NewsDropdownReq"
+    },
+    "NewsDropdownResponse": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NewsDropdown"
+          }
+        },
+        "mainChain": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NewsDropdown"
+          }
+        }
+      },
+      "title": "NewsDropdownResponse",
+      "required": [
+        "token",
+        "mainChain"
+      ]
+    },
+    "NewsExport": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "token": {
+          "type": "string"
+        },
+        "ticker": {
+          "type": "string"
+        },
+        "mainChain": {
+          "type": "string"
+        },
+        "smartContract": {
+          "type": "string"
+        },
+        "latestPrice": {
+          "type": "string"
+        },
+        "liquidityPool": {
+          "type": "string"
+        },
+        "webSiteSet": {
+          "type": "string"
+        },
+        "community": {
+          "type": "string"
+        },
+        "chat": {
+          "type": "string"
+        },
+        "links": {
+          "type": "string"
+        },
+        "Source": {
+          "type": "string"
+        },
+        "webSiteSource": {
+          "type": "string"
+        },
+        "firstAcquisitionTime": {
+          "type": "string"
+        },
+        "updateTime": {
+          "type": "string"
+        },
+        "remarks": {
+          "type": "string"
+        }
+      },
+      "title": "NewsExport",
+      "required": [
+        "id",
+        "token",
+        "ticker",
+        "mainChain",
+        "smartContract",
+        "latestPrice",
+        "liquidityPool",
+        "webSiteSet",
+        "community",
+        "chat",
+        "links",
+        "Source",
+        "webSiteSource",
+        "firstAcquisitionTime",
+        "updateTime",
+        "remarks"
+      ]
+    },
+    "NewsExportRequest": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "tokenParams": {
+          "type": "string",
+          "description": " token 筛选条件"
+        },
+        "mainChainParams": {
+          "type": "string",
+          "description": " 主链筛选条件"
+        },
+        "sourceParams": {
+          "type": "string",
+          "description": " 来源筛选条件"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间筛选条件"
+        },
+        "endTime": {
+          "type": "string",
+          "description": " 结束时间筛选条件"
+        },
+        "liquidityPool": {
+          "type": "string",
+          "description": " LiquidityPool 排序"
+        },
+        "latestPrice": {
+          "type": "string",
+          "description": " latestPrice 排序"
+        }
+      },
+      "title": "NewsExportRequest",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "tokenParams",
+        "mainChainParams",
+        "sourceParams",
+        "startTime",
+        "endTime",
+        "liquidityPool",
+        "latestPrice"
+      ]
+    },
+    "NewsExportResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NewsExport"
+          }
+        }
+      },
+      "title": "NewsExportResponse",
+      "required": [
+        "list"
+      ]
+    },
+    "NewsListRequest": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "tokenParams": {
+          "type": "string",
+          "description": " token 筛选条件"
+        },
+        "mainChainParams": {
+          "type": "string",
+          "description": " 主链筛选条件"
+        },
+        "sourceParams": {
+          "type": "string",
+          "description": " 来源筛选条件"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间筛选条件"
+        },
+        "endTime": {
+          "type": "string",
+          "description": " 结束时间筛选条件"
+        },
+        "liquidityPool": {
+          "type": "string",
+          "description": " LiquidityPool 排序"
+        },
+        "latestPrice": {
+          "type": "string",
+          "description": " latestPrice 排序"
+        }
+      },
+      "title": "NewsListRequest",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "tokenParams",
+        "mainChainParams",
+        "sourceParams",
+        "startTime",
+        "endTime",
+        "liquidityPool",
+        "latestPrice"
+      ]
+    },
+    "NewsListResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NewsResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "NewsListResponse",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "NewsResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "token": {
+          "type": "string"
+        },
+        "ticker": {
+          "type": "string"
+        },
+        "mainChain": {
+          "type": "string"
+        },
+        "smartContract": {
+          "type": "string"
+        },
+        "smartContractUrl": {
+          "type": "string"
+        },
+        "latestPrice": {
+          "type": "string"
+        },
+        "liquidityPool": {
+          "type": "string"
+        },
+        "webSiteSet": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WebSiteRequest"
+          }
+        },
+        "community": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommunityRequest"
+          }
+        },
+        "chat": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChatRequest"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LinkRequest"
+          }
+        },
+        "Source": {
+          "type": "string"
+        },
+        "webSiteSource": {
+          "type": "string"
+        },
+        "firstAcquisitionTime": {
+          "type": "string"
+        },
+        "updateTime": {
+          "type": "string"
+        }
+      },
+      "title": "NewsResponse",
+      "required": [
+        "id",
+        "token",
+        "ticker",
+        "mainChain",
+        "smartContract",
+        "smartContractUrl",
+        "latestPrice",
+        "liquidityPool",
+        "webSiteSet",
+        "community",
+        "chat",
+        "links",
+        "Source",
+        "webSiteSource",
+        "firstAcquisitionTime",
+        "updateTime"
+      ]
+    },
+    "PlatformCreateReq": {
+      "type": "object",
+      "properties": {
+        "platFormName": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "depth": {
+          "type": "integer",
+          "format": "int64",
+          "description": "深度 100"
+        },
+        "monitorStatus": {
+          "type": "integer",
+          "format": "int64",
+          "description": "监测状态"
+        },
+        "instType": {
+          "type": "string",
+          "description": " 交易品类(spot：币币,swap：永续合约,FUTURES futu：交割合约,OPTION：期权)"
+        }
+      },
+      "title": "PlatformCreateReq",
+      "required": [
+        "platFormName",
+        "depth",
+        "monitorStatus",
+        "instType"
+      ]
+    },
+    "PlatformCreateRes": {
+      "type": "object",
+      "title": "PlatformCreateRes"
+    },
+    "PlatformDeleteReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ID"
+        }
+      },
+      "title": "PlatformDeleteReq",
+      "required": [
+        "id"
+      ]
+    },
+    "PlatformDeleteRes": {
+      "type": "object",
+      "title": "PlatformDeleteRes"
+    },
+    "PlatformRequest": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "platformName": {
+          "type": "string",
+          "description": " 平台名称筛选"
+        },
+        "instType": {
+          "type": "string",
+          "description": " 币对筛选"
+        },
+        "monitorStatus": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 监测状态 筛选"
+        }
+      },
+      "title": "PlatformRequest",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "platformName",
+        "instType",
+        "monitorStatus"
+      ]
+    },
+    "PlatformResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ID"
+        },
+        "platformName": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "depth": {
+          "type": "integer",
+          "format": "int64",
+          "description": "深度 100"
+        },
+        "monitorStatus": {
+          "type": "integer",
+          "format": "int64",
+          "description": "监测状态"
+        },
+        "instType": {
+          "type": "string",
+          "description": " 交易品类(spot：币币,swap：永续合约,FUTURES futu：交割合约,OPTION：期权)"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "PlatformResponse",
+      "required": [
+        "id",
+        "platformName",
+        "depth",
+        "monitorStatus",
+        "instType",
+        "createTime",
+        "updateTime"
+      ]
+    },
+    "PlatformResponseList": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PlatformResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "PlatformResponseList",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "PlatformUpdateReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ID"
+        },
+        "platformName": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "depth": {
+          "type": "integer",
+          "format": "int64",
+          "description": "深度 100"
+        },
+        "monitorStatus": {
+          "type": "integer",
+          "format": "int64",
+          "description": "监测状态"
+        },
+        "instType": {
+          "type": "string",
+          "description": " 交易品类(spot：币币,swap：永续合约,FUTURES futu：交割合约,OPTION：期权)"
+        }
+      },
+      "title": "PlatformUpdateReq",
+      "required": [
+        "id",
+        "platformName",
+        "depth",
+        "monitorStatus",
+        "instType"
+      ]
+    },
+    "PlatformUpdateRes": {
+      "type": "object",
+      "title": "PlatformUpdateRes"
+    },
+    "SpotListExportWebReq": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "baseCoins": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "BaseCoin"
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "platforms"
+        },
+        "orderDesc": {
+          "type": "string",
+          "description": "排序 降序字段"
+        },
+        "orderAsc": {
+          "type": "string",
+          "description": "排序 升序字段"
+        },
+        "excludePlatforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "排除平台"
+        }
+      },
+      "title": "SpotListExportWebReq",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "baseCoins",
+        "platforms",
+        "orderDesc",
+        "orderAsc",
+        "excludePlatforms"
+      ]
+    },
+    "SpotListExportWebRes": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SpotWebRes"
+          }
+        }
+      },
+      "title": "SpotListExportWebRes",
+      "required": [
+        "list"
+      ]
+    },
+    "SpotListWebReq": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "baseCoins": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "baseCoins"
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "platforms"
+        },
+        "orderDesc": {
+          "type": "string",
+          "description": "排序 升序字段"
+        },
+        "orderAsc": {
+          "type": "string",
+          "description": "排序 降序字段"
+        },
+        "excludePlatforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "排除平台"
+        }
+      },
+      "title": "SpotListWebReq",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "baseCoins",
+        "platforms",
+        "orderDesc",
+        "orderAsc",
+        "excludePlatforms"
+      ]
+    },
+    "SpotListWebRes": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SpotWebRes"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "SpotListWebRes",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "SpotTickerDepthRequest": {
+      "type": "object",
+      "properties": {
+        "depthPrice": {
+          "type": "string",
+          "description": "深度价格"
+        },
+        "coinCount": {
+          "type": "string",
+          "description": "当前深度价格的的币数量"
+        },
+        "orderCount": {
+          "type": "string",
+          "description": "当前深度价格的的订单数量"
+        }
+      },
+      "title": "SpotTickerDepthRequest",
+      "required": [
+        "depthPrice",
+        "coinCount",
+        "orderCount"
+      ]
+    },
+    "SpotTickerRequest": {
+      "type": "object",
+      "properties": {
+        "baseCoin": {
+          "type": "string",
+          "description": "btc/usdt btc is base_coin"
+        },
+        "countCoin": {
+          "type": "string",
+          "description": "btc/usdt usdt is base_coin"
+        },
+        "platformName": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "last": {
+          "type": "string",
+          "description": "最新成交价"
+        },
+        "lastSz": {
+          "type": "string",
+          "description": "最新成交数量"
+        },
+        "askPx": {
+          "type": "string",
+          "description": "卖一价"
+        },
+        "askSz": {
+          "type": "string",
+          "description": "卖一价对应的数量"
+        },
+        "bidPx": {
+          "type": "string",
+          "description": "买一价"
+        },
+        "bidSz": {
+          "type": "string",
+          "description": "买一价格对应的数量"
+        },
+        "open24h": {
+          "type": "string",
+          "description": "24小时开盘价"
+        },
+        "high24h": {
+          "type": "string",
+          "description": "24小时最高价"
+        },
+        "low24h": {
+          "type": "string",
+          "description": "24小时最低价"
+        },
+        "volCcy24h": {
+          "type": "string",
+          "description": "24小时计价币usdt 成交数量"
+        },
+        "vol24h": {
+          "type": "string",
+          "description": "24小时交易货币 btc成交数量"
+        },
+        "sodUtc0": {
+          "type": "string",
+          "description": "UTC 0时开盘价"
+        },
+        "sodUtc8": {
+          "type": "string",
+          "description": "UTC+8 时开盘价"
+        },
+        "ts": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ticker数据产生时间，Unix时间戳的毫秒数格式，如 1597026383085"
+        },
+        "depth": {
+          "type": "integer",
+          "format": "int64",
+          "description": "深度 100"
+        },
+        "asksPx": {
+          "type": "string",
+          "description": "买单指定深度交易额"
+        },
+        "bidsPx": {
+          "type": "string",
+          "description": "卖单指定深度交易额"
+        },
+        "asks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SpotTickerDepthRequest"
+          },
+          "description": "买盘深度"
+        },
+        "bids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SpotTickerDepthRequest"
+          },
+          "description": "卖盘深度"
+        },
+        "amplitude24": {
+          "type": "string",
+          "description": "24H振幅"
+        },
+        "upsanddowns24": {
+          "type": "string",
+          "description": "24涨跌幅"
+        }
+      },
+      "title": "SpotTickerRequest",
+      "required": [
+        "baseCoin",
+        "countCoin",
+        "platformName",
+        "last",
+        "lastSz",
+        "askPx",
+        "askSz",
+        "bidPx",
+        "bidSz",
+        "open24h",
+        "high24h",
+        "low24h",
+        "volCcy24h",
+        "vol24h",
+        "sodUtc0",
+        "sodUtc8",
+        "ts",
+        "depth",
+        "asksPx",
+        "bidsPx",
+        "asks",
+        "bids",
+        "amplitude24",
+        "upsanddowns24"
+      ]
+    },
+    "SpotTickerRequestList": {
+      "type": "object",
+      "properties": {
+        "spots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SpotTickerRequest"
+          },
+          "description": "币币行情集合"
+        }
+      },
+      "title": "SpotTickerRequestList",
+      "required": [
+        "spots"
+      ]
+    },
+    "SpotTickerResponse": {
+      "type": "object",
+      "title": "SpotTickerResponse"
+    },
+    "SpotWebRes": {
+      "type": "object",
+      "properties": {
+        "base_coin": {
+          "type": "string",
+          "description": "btc/usdt btc is base_coin"
+        },
+        "base_coin_url": {
+          "type": "string",
+          "description": "交易对跳转链接"
+        },
+        "count_coin": {
+          "type": "string",
+          "description": "btc/usdt usdt is base_coin"
+        },
+        "ex_platform": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "last_price": {
+          "type": "string",
+          "description": "最新成交价"
+        },
+        "last_sz": {
+          "type": "string",
+          "description": "最新成交数量"
+        },
+        "ask_px": {
+          "type": "string",
+          "description": "卖一价"
+        },
+        "ask_sz": {
+          "type": "string",
+          "description": "卖一价对应的数量"
+        },
+        "bid_px": {
+          "type": "string",
+          "description": "买一价"
+        },
+        "bid_sz": {
+          "type": "string",
+          "description": "买一价格对应的数量"
+        },
+        "open_24h": {
+          "type": "string",
+          "description": "24小时开盘价"
+        },
+        "high_24h": {
+          "type": "string",
+          "description": "24小时最高价"
+        },
+        "low_24h": {
+          "type": "string",
+          "description": "24小时最低价"
+        },
+        "vol_ccy_24h": {
+          "type": "string",
+          "description": "24小时计价币usdt 成交数量"
+        },
+        "vol_24h": {
+          "type": "string",
+          "description": "24小时交易货币 btc成交数量"
+        },
+        "sod_utc0": {
+          "type": "string",
+          "description": "UTC 0时开盘价"
+        },
+        "sod_utc8": {
+          "type": "string",
+          "description": "UTC+8 时开盘价"
+        },
+        "ts": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ticker数据产生时间，Unix时间戳的毫秒数格式，如 1597026383085"
+        },
+        "depth": {
+          "type": "integer",
+          "format": "int64",
+          "description": "深度 100"
+        },
+        "asks_px": {
+          "type": "string",
+          "description": "买单指定深度交易额"
+        },
+        "bids_px": {
+          "type": "string",
+          "description": "卖单指定深度交易额"
+        },
+        "asks": {
+          "type": "string",
+          "description": "买盘深度"
+        },
+        "bids": {
+          "type": "string",
+          "description": "卖盘深度"
+        },
+        "amplitude24": {
+          "type": "string",
+          "description": "24H振幅"
+        },
+        "ups_and_downs24": {
+          "type": "string",
+          "description": "24涨跌幅"
+        },
+        "bid_ask_ratio": {
+          "type": "string",
+          "description": " 买1/卖1价差比"
+        },
+        "update_time": {
+          "type": "string",
+          "description": "更新时间"
+        },
+        "asks2": {
+          "type": "string",
+          "description": " 买盘深度2%价格汇总额"
+        },
+        "asks5": {
+          "type": "string",
+          "description": " 买盘深度5%价格汇总额"
+        },
+        "asks10": {
+          "type": "string",
+          "description": " 买盘深度10%价格汇总额"
+        },
+        "bids2": {
+          "type": "string",
+          "description": " 卖盘深度2%价格汇总额"
+        },
+        "bids5": {
+          "type": "string",
+          "description": " 卖盘深度5%价格汇总额"
+        },
+        "bids10": {
+          "type": "string",
+          "description": " 卖盘深度10%价格汇总额"
+        }
+      },
+      "title": "SpotWebRes",
+      "required": [
+        "base_coin",
+        "base_coin_url",
+        "count_coin",
+        "ex_platform",
+        "last_price",
+        "last_sz",
+        "ask_px",
+        "ask_sz",
+        "bid_px",
+        "bid_sz",
+        "open_24h",
+        "high_24h",
+        "low_24h",
+        "vol_ccy_24h",
+        "vol_24h",
+        "sod_utc0",
+        "sod_utc8",
+        "ts",
+        "depth",
+        "asks_px",
+        "bids_px",
+        "asks",
+        "bids",
+        "amplitude24",
+        "ups_and_downs24",
+        "bid_ask_ratio",
+        "update_time",
+        "asks2",
+        "asks5",
+        "asks10",
+        "bids2",
+        "bids5",
+        "bids10"
+      ]
+    },
+    "TransactionDropdown": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "title": "TransactionDropdown",
+      "required": [
+        "value",
+        "label"
+      ]
+    },
+    "TransactionPairWebReq": {
+      "type": "object",
+      "title": "TransactionPairWebReq"
+    },
+    "TransactionPairWebRes": {
+      "type": "object",
+      "properties": {
+        "baseCoin": {
+          "type": "string"
+        },
+        "countCoin": {
+          "type": "string"
+        }
+      },
+      "title": "TransactionPairWebRes",
+      "required": [
+        "baseCoin",
+        "countCoin"
+      ]
+    },
+    "TransactionPairWebResList": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TransactionPairWebRes"
+          }
+        },
+        "platformList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TransactionDropdown"
+          }
+        }
+      },
+      "title": "TransactionPairWebResList",
+      "required": [
+        "list",
+        "platformList"
+      ]
+    },
+    "WalAllPlatformRequest": {
+      "type": "object",
+      "title": "WalAllPlatformRequest"
+    },
+    "WalAllPlatformResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ID"
+        },
+        "platFormName": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "chainType": {
+          "type": "string",
+          "description": "链类型"
+        },
+        "walletAddress": {
+          "type": "string",
+          "description": "钱包地址"
+        },
+        "walletAddressCrc64": {
+          "type": "integer",
+          "format": "int64",
+          "description": "钱包地址crc64"
+        },
+        "monitorStatus": {
+          "type": "integer",
+          "format": "int64",
+          "description": "监测状态"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "WalAllPlatformResponse",
+      "required": [
+        "id",
+        "platFormName",
+        "chainType",
+        "walletAddress",
+        "walletAddressCrc64",
+        "monitorStatus",
+        "createTime",
+        "updateTime"
+      ]
+    },
+    "WalAllPlatformResponseList": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WalAllPlatformResponse"
+          }
+        }
+      },
+      "title": "WalAllPlatformResponseList",
+      "required": [
+        "list"
+      ]
+    },
+    "WalBlockchainTradeRequest": {
+      "type": "object",
+      "properties": {
+        "platformName": {
+          "type": "string"
+        },
+        "chainType": {
+          "type": "string"
+        },
+        "contract": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "tokenSymbol": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "Timestamp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "BlockNum": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "txHash": {
+          "type": "string"
+        },
+        "txIndex": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "bigValue": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number",
+          "format": "double"
+        },
+        "transferType": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "WalBlockchainTradeRequest",
+      "required": [
+        "platformName",
+        "chainType",
+        "contract",
+        "name",
+        "tokenSymbol",
+        "from",
+        "to",
+        "timestamp",
+        "blockNum",
+        "txHash",
+        "txIndex",
+        "bigValue",
+        "value",
+        "transferType"
+      ]
+    },
+    "WalBlockchainTradeRequestList": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WalBlockchainTradeRequest"
+          },
+          "description": "请求集合"
+        }
+      },
+      "title": "WalBlockchainTradeRequestList",
+      "required": [
+        "list"
+      ]
+    },
+    "WalBlockchainTradeResponse": {
+      "type": "object",
+      "title": "WalBlockchainTradeResponse"
+    },
+    "WalPlatformCreateReq": {
+      "type": "object",
+      "properties": {
+        "platFormName": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "walletAddress": {
+          "type": "string",
+          "description": "钱包地址"
+        },
+        "monitorStatus": {
+          "type": "integer",
+          "format": "int64",
+          "description": "监测状态"
+        },
+        "chainType": {
+          "type": "string",
+          "description": "链类型"
+        }
+      },
+      "title": "WalPlatformCreateReq",
+      "required": [
+        "platFormName",
+        "walletAddress",
+        "monitorStatus",
+        "chainType"
+      ]
+    },
+    "WalPlatformCreateRes": {
+      "type": "object",
+      "title": "WalPlatformCreateRes"
+    },
+    "WalPlatformDeleteReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ID"
+        }
+      },
+      "title": "WalPlatformDeleteReq",
+      "required": [
+        "id"
+      ]
+    },
+    "WalPlatformDeleteRes": {
+      "type": "object",
+      "title": "WalPlatformDeleteRes"
+    },
+    "WalPlatformExportRes": {
+      "type": "object",
+      "properties": {
+        "Number Id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Token": {
+          "type": "string",
+          "description": " Token"
+        },
+        "Ticker": {
+          "type": "string",
+          "description": " Token 简称"
+        },
+        "Main Chain": {
+          "type": "string",
+          "description": " 所属主链"
+        },
+        "Smart Contract": {
+          "type": "string",
+          "description": " 钱包跳转链接"
+        },
+        "Platform": {
+          "type": "string",
+          "description": " 所属平台"
+        },
+        "Number of Token Depopsit": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 充币笔数"
+        },
+        "Deposit Amount": {
+          "type": "string",
+          "description": " 充币数额"
+        },
+        "Number of Token Withdraw": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 提币笔数"
+        },
+        "Withdraw Amount": {
+          "type": "string",
+          "description": " 提币数额"
+        },
+        "Accumulation Start Date": {
+          "type": "string",
+          "description": " 统计起始时间"
+        }
+      },
+      "title": "WalPlatformExportRes",
+      "required": [
+        "Number Id",
+        "Token",
+        "Ticker",
+        "Main Chain",
+        "Smart Contract",
+        "Platform",
+        "Number of Token Depopsit",
+        "Deposit Amount",
+        "Number of Token Withdraw",
+        "Withdraw Amount",
+        "Accumulation Start Date"
+      ]
+    },
+    "WalPlatformRequest": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "platformName": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "monitorStatus": {
+          "type": "integer",
+          "format": "int64",
+          "description": "监测状态"
+        },
+        "chainType": {
+          "type": "string",
+          "description": "链类型"
+        }
+      },
+      "title": "WalPlatformRequest",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "platformName",
+        "monitorStatus",
+        "chainType"
+      ]
+    },
+    "WalPlatformResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ID"
+        },
+        "platFormName": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "chainType": {
+          "type": "string",
+          "description": "链类型"
+        },
+        "walletAddress": {
+          "type": "string",
+          "description": "钱包地址"
+        },
+        "walletAddressCrc64": {
+          "type": "integer",
+          "format": "int64",
+          "description": "钱包地址crc64"
+        },
+        "monitorStatus": {
+          "type": "integer",
+          "format": "int64",
+          "description": "监测状态"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "WalPlatformResponse",
+      "required": [
+        "id",
+        "platFormName",
+        "chainType",
+        "walletAddress",
+        "walletAddressCrc64",
+        "monitorStatus",
+        "createTime",
+        "updateTime"
+      ]
+    },
+    "WalPlatformResponseList": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WalPlatformResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "WalPlatformResponseList",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "WalPlatformUpdateReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ID"
+        },
+        "platFormName": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "walletAddress": {
+          "type": "string",
+          "description": "钱包地址"
+        },
+        "monitorStatus": {
+          "type": "integer",
+          "format": "int64",
+          "description": "监测状态 0关闭 1开启"
+        },
+        "chainType": {
+          "type": "string",
+          "description": "链类型"
+        }
+      },
+      "title": "WalPlatformUpdateReq",
+      "required": [
+        "id",
+        "platFormName",
+        "walletAddress",
+        "monitorStatus",
+        "chainType"
+      ]
+    },
+    "WalPlatformUpdateRes": {
+      "type": "object",
+      "title": "WalPlatformUpdateRes"
+    },
+    "WalPlatformWebExcelReq": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "platformName": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "tokenName": {
+          "type": "string",
+          "description": " token 筛选参数"
+        },
+        "chainName": {
+          "type": "string",
+          "description": " 主链 筛选参数"
+        },
+        "rechargeCount": {
+          "type": "string",
+          "description": " 充值笔数 排序"
+        },
+        "rechargeBal": {
+          "type": "string",
+          "description": " 充币数量 排序"
+        },
+        "withdrawCount": {
+          "type": "string",
+          "description": " 提现笔数 排序"
+        },
+        "withdrawBal": {
+          "type": "string",
+          "description": " 提现数量 排序"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "结束时间"
+        },
+        "contract": {
+          "type": "string",
+          "description": " 钱包地址输入框"
+        },
+        "excludePlatforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "排除平台"
+        }
+      },
+      "title": "WalPlatformWebExcelReq",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "platformName",
+        "tokenName",
+        "chainName",
+        "rechargeCount",
+        "rechargeBal",
+        "withdrawCount",
+        "withdrawBal",
+        "startTime",
+        "endTime",
+        "contract",
+        "excludePlatforms"
+      ]
+    },
+    "WalPlatformWebExcelRes": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WalPlatformExportRes"
+          }
+        }
+      },
+      "title": "WalPlatformWebExcelRes",
+      "required": [
+        "list"
+      ]
+    },
+    "WalPlatformWebListRes": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WalPlatformWebRes"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "WalPlatformWebListRes",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "WalPlatformWebReq": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "platformName": {
+          "type": "string",
+          "description": "平台名称"
+        },
+        "tokenName": {
+          "type": "string",
+          "description": " token 筛选参数"
+        },
+        "chainName": {
+          "type": "string",
+          "description": " 主链 筛选参数"
+        },
+        "rechargeCount": {
+          "type": "string",
+          "description": " 充值笔数 排序"
+        },
+        "rechargeBal": {
+          "type": "string",
+          "description": " 充币数量 排序"
+        },
+        "withdrawCount": {
+          "type": "string",
+          "description": " 提现笔数 排序"
+        },
+        "withdrawBal": {
+          "type": "string",
+          "description": " 提现数量 排序"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "结束时间"
+        },
+        "contract": {
+          "type": "string",
+          "description": " 钱包地址输入框"
+        },
+        "excludePlatforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "排除平台"
+        }
+      },
+      "title": "WalPlatformWebReq",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "platformName",
+        "tokenName",
+        "chainName",
+        "rechargeCount",
+        "rechargeBal",
+        "withdrawCount",
+        "withdrawBal",
+        "startTime",
+        "endTime",
+        "contract",
+        "excludePlatforms"
+      ]
+    },
+    "WalPlatformWebRes": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "token": {
+          "type": "string",
+          "description": " Token"
+        },
+        "tokenSymbol": {
+          "type": "string",
+          "description": " Token 简称"
+        },
+        "chainType": {
+          "type": "string",
+          "description": " 所属主链"
+        },
+        "contract": {
+          "type": "string",
+          "description": " 钱包地址"
+        },
+        "contractUrl": {
+          "type": "string",
+          "description": " 钱包跳转链接"
+        },
+        "platformName": {
+          "type": "string",
+          "description": " 所属平台"
+        },
+        "rechargeCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 充币笔数"
+        },
+        "rechargeBal": {
+          "type": "string",
+          "description": " 充币数额"
+        },
+        "withdrawCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 提币笔数"
+        },
+        "withdrawBal": {
+          "type": "string",
+          "description": " 提币数额"
+        },
+        "startTime": {
+          "type": "string",
+          "description": " 统计起始时间"
+        },
+        "endTime": {
+          "type": "string",
+          "description": " 统计截止时间"
+        }
+      },
+      "title": "WalPlatformWebRes",
+      "required": [
+        "id",
+        "token",
+        "tokenSymbol",
+        "chainType",
+        "contract",
+        "contractUrl",
+        "platformName",
+        "rechargeCount",
+        "rechargeBal",
+        "withdrawCount",
+        "withdrawBal",
+        "startTime",
+        "endTime"
+      ]
+    },
+    "WalletDropdownReq": {
+      "type": "object",
+      "title": "WalletDropdownReq"
+    },
+    "WalletDropdownResponse": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dropdown"
+          }
+        },
+        "platform": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dropdown"
+          }
+        }
+      },
+      "title": "WalletDropdownResponse",
+      "required": [
+        "token",
+        "platform"
+      ]
+    },
+    "WebSiteRequest": {
+      "type": "object",
+      "properties": {
+        "website": {
+          "type": "string"
+        },
+        "websiteUrl": {
+          "type": "string"
+        }
+      },
+      "title": "WebSiteRequest",
+      "required": [
+        "website",
+        "websiteUrl"
+      ]
+    }
+  },
+  "securityDefinitions": {
+    "apiKey": {
+      "type": "apiKey",
+      "description": "Enter JWT Bearer token **_only_**",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}

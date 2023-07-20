@@ -1,0 +1,267 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "tg机器人消息推送",
+    "description": "通过tg机器人实时推送消息到tg群",
+    "version": "v1"
+  },
+  "basePath": "/api",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/newfeeds/blindbox": {
+      "post": {
+        "summary": "盲盒消息推送",
+        "operationId": "BlindBox",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/BlindBoxResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BlindBoxRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/newfeeds/common": {
+      "post": {
+        "summary": "通用消息推送",
+        "operationId": "CommonMessage",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/WinnerResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CommonRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/newfeeds/monitor": {
+      "get": {
+        "summary": "服务检测",
+        "operationId": "Monitor",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/MonitorResponse"
+            }
+          }
+        },
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/newfeeds/winner": {
+      "post": {
+        "summary": "中奖消息推送",
+        "operationId": "Winner",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/WinnerResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WinnerRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "BlindBox": {
+      "type": "object",
+      "properties": {
+        "imageUrl": {
+          "type": "string",
+          "description": " 图片地址"
+        },
+        "seriesName": {
+          "type": "string",
+          "description": " 系列名称"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": " uid"
+        },
+        "quantity": {
+          "type": "string",
+          "description": " 购买数量"
+        },
+        "seriesUrl": {
+          "type": "string",
+          "description": " 系列地址"
+        }
+      },
+      "title": "BlindBox",
+      "required": [
+        "imageUrl",
+        "seriesName",
+        "uid",
+        "quantity",
+        "seriesUrl"
+      ]
+    },
+    "BlindBoxRequest": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BlindBox"
+          }
+        }
+      },
+      "title": "BlindBoxRequest",
+      "required": [
+        "list"
+      ]
+    },
+    "BlindBoxResponse": {
+      "type": "object",
+      "title": "BlindBoxResponse"
+    },
+    "CommonRequest": {
+      "type": "object",
+      "properties": {
+        "groupId": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "CommonRequest",
+      "required": [
+        "groupId",
+        "message"
+      ]
+    },
+    "CommonResponse": {
+      "type": "object",
+      "title": "CommonResponse"
+    },
+    "MonitorRequest": {
+      "type": "object",
+      "title": "MonitorRequest"
+    },
+    "MonitorResponse": {
+      "type": "object",
+      "title": "MonitorResponse"
+    },
+    "Winner": {
+      "type": "object",
+      "properties": {
+        "imageUrl": {
+          "type": "string",
+          "description": " 图片地址"
+        },
+        "seriesName": {
+          "type": "string",
+          "description": " 系列名称"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": " uid"
+        },
+        "quantity": {
+          "type": "string",
+          "description": " 购买数量"
+        },
+        "seriesUrl": {
+          "type": "string",
+          "description": " 系列地址"
+        }
+      },
+      "title": "Winner",
+      "required": [
+        "imageUrl",
+        "seriesName",
+        "uid",
+        "quantity",
+        "seriesUrl"
+      ]
+    },
+    "WinnerRequest": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Winner"
+          }
+        }
+      },
+      "title": "WinnerRequest",
+      "required": [
+        "list"
+      ]
+    },
+    "WinnerResponse": {
+      "type": "object",
+      "title": "WinnerResponse"
+    }
+  },
+  "securityDefinitions": {
+    "apiKey": {
+      "type": "apiKey",
+      "description": "Enter JWT Bearer token **_only_**",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}

@@ -1,0 +1,2249 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "tg运营管理后台",
+    "description": "tg运营管理后台",
+    "version": "v1"
+  },
+  "basePath": "/api",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/tgoperate/activity/dropdownlist": {
+      "post": {
+        "summary": "[web]普通活动中奖用户 下拉框",
+        "operationId": "OrdinaryActivityDropSownList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/OrdinaryActivityDropDownListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrdinaryActivityDropDownListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/activity/export": {
+      "post": {
+        "summary": "[web]普通活动中奖用户导出 列表",
+        "operationId": "OrdinaryActivityExport",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/OrdinaryActivityExportResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrdinaryActivityExport"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/activity/list": {
+      "post": {
+        "summary": "[web]普通活动中奖用户查询 列表",
+        "operationId": "OrdinaryActivityList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/OrdinaryActivityListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrdinaryActivityList"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/ama/detail": {
+      "post": {
+        "summary": "[web] AMA中奖用户查询 详情",
+        "operationId": "AmaDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AmaDetailListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AmaDetailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/ama/export": {
+      "post": {
+        "summary": "[web] AMA中奖用户查询 导出",
+        "operationId": "AmaDetailExport",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AmaDetailExportResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AmaDetailExportRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/ama/list": {
+      "post": {
+        "summary": "[web] AMA中奖用户查询 列表",
+        "operationId": "AmaList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AmaListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AmaListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/coinprice/add": {
+      "post": {
+        "summary": "[web]单币种报价按钮管理新增",
+        "operationId": "CoinPriceAdd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CoinPriceAddResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CoinPriceAddRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/coinprice/delete": {
+      "post": {
+        "summary": "[web]单币种报价按钮管理删除",
+        "operationId": "CoinPriceDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CoinPriceDeleteResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CoinPriceDeleteRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/coinprice/list": {
+      "post": {
+        "summary": "[web]单币种报价按钮管理列表",
+        "operationId": "CoinPriceList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CoinPriceListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "--------------------------------------------------",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CoinPriceListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/coinprice/update": {
+      "post": {
+        "summary": "[web]单币种报价按钮管理编辑",
+        "operationId": "CoinPriceUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CoinPriceUpdateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CoinPriceUpdateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/communities/add": {
+      "post": {
+        "summary": "[web]社区按钮管理新增",
+        "operationId": "CommunitiesAdd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CommunitiesAddResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CommunitiesAddRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/communities/delete": {
+      "post": {
+        "summary": "[web]社区按钮管理删除",
+        "operationId": "CommunitiesDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CommunitiesDeleteResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CommunitiesDeleteRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/communities/list": {
+      "post": {
+        "summary": "[web]社区按钮管理列表",
+        "operationId": "CommunitiesList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CommunitiesListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CommunitiesListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/communities/update": {
+      "post": {
+        "summary": "[web]社区按钮管理编辑",
+        "operationId": "CommunitiesUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CommunitiesUpdateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CommunitiesUpdateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/config/list": {
+      "post": {
+        "summary": "[web]删除重复消息 设置列表",
+        "operationId": "DeleteMessageConfigList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeleteMessageConfigListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DeleteMessageConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/config/update": {
+      "post": {
+        "summary": "[web]删除重复消息 编辑",
+        "operationId": "DeleteMessageConfigUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeleteMessageUpdateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DeleteMessageUpdateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/country/add": {
+      "post": {
+        "summary": "[web]绑定国家按钮管理新增",
+        "operationId": "CountryAdd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CountryAddResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CountryAddRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/country/delete": {
+      "post": {
+        "summary": "[web]绑定国家按钮管理删除",
+        "operationId": "CountryDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CountryDeleteResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CountryDeleteRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/country/list": {
+      "post": {
+        "summary": "[web]绑定国家按钮管理列表",
+        "operationId": "CountryList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CountryListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CountryListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/country/update": {
+      "post": {
+        "summary": "[web]绑定国家按钮管理编辑",
+        "operationId": "CountryUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CountryUpdateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CountryUpdateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/group/add": {
+      "post": {
+        "summary": "[web] 群发消息群组设置 详情",
+        "operationId": "GroupAdd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GroupAddResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GroupAddRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/group/delete": {
+      "post": {
+        "summary": "[web] 群发消息群组设置 删除",
+        "operationId": "GroupDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GroupDeleteResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GroupDeleteRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/group/list": {
+      "post": {
+        "summary": "[web] 群发消息群组设置 列表",
+        "operationId": "GroupList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GroupListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " -----------------------------------------------",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GroupListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/group/update": {
+      "post": {
+        "summary": "[web] 群发消息群组设置 编辑",
+        "operationId": "GroupUpdate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GroupUpdateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GroupUpdateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/sensitiveword/add": {
+      "post": {
+        "summary": "[web]敏感词管理添加敏感词",
+        "operationId": "SensitiveWordAdd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SensitiveWordAddResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SensitiveWordAddRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/sensitiveword/delete": {
+      "post": {
+        "summary": "[web]敏感词管理删除敏感词",
+        "operationId": "SensitiveWordDel",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SensitiveWordDelResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SensitiveWordDelRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/sensitiveword/list": {
+      "post": {
+        "summary": "[web]敏感词管理列表",
+        "operationId": "SensitiveWordList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SensitiveWordListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SensitiveWordListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/user/dropdownlist": {
+      "post": {
+        "summary": "[web]TG用户列表下拉框",
+        "operationId": "UserDropSownList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UserDropDownListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "user list 请求",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserDropDownListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/user/list": {
+      "post": {
+        "summary": "[web]TG用户列表",
+        "operationId": "UserList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UserListResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    },
+    "/api/tgoperate/user/listexport": {
+      "post": {
+        "summary": "[web]TG用户列表导出",
+        "operationId": "UserListExport",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UserListExportResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Operate"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "AmaDetailExportRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "AmaDetailExportRequest",
+      "required": [
+        "id",
+        "pageIndex",
+        "pageSize"
+      ]
+    },
+    "AmaDetailExportResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AmaDetailResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "AmaDetailExportResponse",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "AmaDetailListResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AmaDetailResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "AmaDetailListResponse",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "AmaDetailRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "AmaDetailRequest",
+      "required": [
+        "id",
+        "pageIndex",
+        "pageSize"
+      ]
+    },
+    "AmaDetailResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "tgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "tgUsername": {
+          "type": "string"
+        },
+        "session": {
+          "type": "string"
+        },
+        "kycCountry": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "phoneNum": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "creatTime": {
+          "type": "string"
+        }
+      },
+      "title": "AmaDetailResponse",
+      "required": [
+        "id",
+        "tgId",
+        "tgUsername",
+        "session",
+        "kycCountry",
+        "country",
+        "uid",
+        "phoneNum",
+        "email",
+        "creatTime"
+      ]
+    },
+    "AmaListDetailRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "AmaListDetailRequest",
+      "required": [
+        "id"
+      ]
+    },
+    "AmaListDetailResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "AmaListDetailResponse",
+      "required": [
+        "id"
+      ]
+    },
+    "AmaListRequest": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "activityName": {
+          "type": "string"
+        }
+      },
+      "title": "AmaListRequest",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "activityName"
+      ]
+    },
+    "AmaListResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AmaResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "AmaListResponse",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "AmaResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "amaActivity": {
+          "type": "string"
+        },
+        "endTime": {
+          "type": "string"
+        }
+      },
+      "title": "AmaResponse",
+      "required": [
+        "id",
+        "amaActivity",
+        "endTime"
+      ]
+    },
+    "CoinPriceAddRequest": {
+      "type": "object",
+      "properties": {
+        "buttonName": {
+          "type": "string"
+        },
+        "buttonLink": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "CoinPriceAddRequest",
+      "required": [
+        "buttonName",
+        "buttonLink",
+        "weight"
+      ]
+    },
+    "CoinPriceAddResponse": {
+      "type": "object",
+      "title": "CoinPriceAddResponse"
+    },
+    "CoinPriceDeleteRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "CoinPriceDeleteRequest",
+      "required": [
+        "id"
+      ]
+    },
+    "CoinPriceDeleteResponse": {
+      "type": "object",
+      "title": "CoinPriceDeleteResponse"
+    },
+    "CoinPriceListRequest": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "buttonName": {
+          "type": "string"
+        }
+      },
+      "title": "CoinPriceListRequest",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "buttonName"
+      ]
+    },
+    "CoinPriceListResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CoinPriceResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "CoinPriceListResponse",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "CoinPriceResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "buttonName": {
+          "type": "string"
+        },
+        "buttonLink": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "CoinPriceResponse",
+      "required": [
+        "id",
+        "buttonName",
+        "buttonLink",
+        "weight"
+      ]
+    },
+    "CoinPriceUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "buttonName": {
+          "type": "string"
+        },
+        "buttonLink": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "CoinPriceUpdateRequest",
+      "required": [
+        "id",
+        "buttonName",
+        "buttonLink",
+        "weight"
+      ]
+    },
+    "CoinPriceUpdateResponse": {
+      "type": "object",
+      "title": "CoinPriceUpdateResponse"
+    },
+    "CommunitiesAddRequest": {
+      "type": "object",
+      "properties": {
+        "communitiesName": {
+          "type": "string"
+        },
+        "communitiesIcon": {
+          "type": "string"
+        },
+        "communitiesLink": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "CommunitiesAddRequest",
+      "required": [
+        "communitiesName",
+        "communitiesIcon",
+        "communitiesLink",
+        "weight"
+      ]
+    },
+    "CommunitiesAddResponse": {
+      "type": "object",
+      "title": "CommunitiesAddResponse"
+    },
+    "CommunitiesDeleteRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "CommunitiesDeleteRequest",
+      "required": [
+        "id"
+      ]
+    },
+    "CommunitiesDeleteResponse": {
+      "type": "object",
+      "title": "CommunitiesDeleteResponse"
+    },
+    "CommunitiesListRequest": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "communitiesName": {
+          "type": "string"
+        }
+      },
+      "title": "CommunitiesListRequest",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "communitiesName"
+      ]
+    },
+    "CommunitiesListResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommunitiesResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "CommunitiesListResponse",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "CommunitiesResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "communitiesName": {
+          "type": "string"
+        },
+        "communitiesIcon": {
+          "type": "string"
+        },
+        "communitiesLink": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "CommunitiesResponse",
+      "required": [
+        "id",
+        "communitiesName",
+        "communitiesIcon",
+        "communitiesLink",
+        "weight"
+      ]
+    },
+    "CommunitiesUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "communitiesName": {
+          "type": "string"
+        },
+        "communitiesIcon": {
+          "type": "string"
+        },
+        "communitiesLink": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "CommunitiesUpdateRequest",
+      "required": [
+        "id",
+        "communitiesName",
+        "communitiesIcon",
+        "communitiesLink",
+        "weight"
+      ]
+    },
+    "CommunitiesUpdateResponse": {
+      "type": "object",
+      "title": "CommunitiesUpdateResponse"
+    },
+    "CountryAddRequest": {
+      "type": "object",
+      "properties": {
+        "countryName": {
+          "type": "string"
+        },
+        "countryIcon": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "CountryAddRequest",
+      "required": [
+        "countryName",
+        "countryIcon",
+        "weight"
+      ]
+    },
+    "CountryAddResponse": {
+      "type": "object",
+      "title": "CountryAddResponse"
+    },
+    "CountryDeleteRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "CountryDeleteRequest",
+      "required": [
+        "id"
+      ]
+    },
+    "CountryDeleteResponse": {
+      "type": "object",
+      "title": "CountryDeleteResponse"
+    },
+    "CountryDropdown": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "title": "CountryDropdown",
+      "required": [
+        "value",
+        "label"
+      ]
+    },
+    "CountryListRequest": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "countryName": {
+          "type": "string"
+        }
+      },
+      "title": "CountryListRequest",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "countryName"
+      ]
+    },
+    "CountryListResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CountryResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "CountryListResponse",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "CountryResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "countryName": {
+          "type": "string"
+        },
+        "countryIcon": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "CountryResponse",
+      "required": [
+        "id",
+        "countryName",
+        "countryIcon",
+        "weight"
+      ]
+    },
+    "CountryUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "countryName": {
+          "type": "string"
+        },
+        "countryIcon": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "CountryUpdateRequest",
+      "required": [
+        "id",
+        "countryName",
+        "countryIcon",
+        "weight"
+      ]
+    },
+    "CountryUpdateResponse": {
+      "type": "object",
+      "title": "CountryUpdateResponse"
+    },
+    "DeleteMessageConfigListResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeleteMessageConfigResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "DeleteMessageConfigListResponse",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "DeleteMessageConfigRequest": {
+      "type": "object",
+      "title": "DeleteMessageConfigRequest"
+    },
+    "DeleteMessageConfigResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "repeatTimers": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "timeInterval": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DeleteMessageConfigResponse",
+      "required": [
+        "id",
+        "repeatTimers",
+        "timeInterval"
+      ]
+    },
+    "DeleteMessageUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "repeatTimers": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "timeInterval": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DeleteMessageUpdateRequest",
+      "required": [
+        "id",
+        "repeatTimers",
+        "timeInterval"
+      ]
+    },
+    "DeleteMessageUpdateResponse": {
+      "type": "object",
+      "title": "DeleteMessageUpdateResponse"
+    },
+    "GroupAddRequest": {
+      "type": "object",
+      "properties": {
+        "groupName": {
+          "type": "string",
+          "description": " 群组名称"
+        },
+        "groupId": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 群组名称"
+        }
+      },
+      "title": "GroupAddRequest",
+      "required": [
+        "groupName",
+        "groupId"
+      ]
+    },
+    "GroupAddResponse": {
+      "type": "object",
+      "title": "GroupAddResponse"
+    },
+    "GroupDeleteRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "GroupDeleteRequest",
+      "required": [
+        "id"
+      ]
+    },
+    "GroupDeleteResponse": {
+      "type": "object",
+      "title": "GroupDeleteResponse"
+    },
+    "GroupDropdown": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "title": "GroupDropdown",
+      "required": [
+        "value",
+        "label"
+      ]
+    },
+    "GroupListRequest": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "groupName": {
+          "type": "string",
+          "description": " 群组名称"
+        }
+      },
+      "title": "GroupListRequest",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "groupName"
+      ]
+    },
+    "GroupListResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GroupResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "GroupListResponse",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "GroupResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": " 0 关 1 开"
+        },
+        "groupName": {
+          "type": "string",
+          "description": " 群组名称"
+        },
+        "groupId": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 群组名称"
+        }
+      },
+      "title": "GroupResponse",
+      "required": [
+        "id",
+        "status",
+        "groupName",
+        "groupId"
+      ]
+    },
+    "GroupUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": " 0 关 1 开"
+        },
+        "groupName": {
+          "type": "string",
+          "description": " 群组名称"
+        },
+        "groupId": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 群组名称"
+        }
+      },
+      "title": "GroupUpdateRequest",
+      "required": [
+        "id",
+        "status",
+        "groupName",
+        "groupId"
+      ]
+    },
+    "GroupUpdateResponse": {
+      "type": "object",
+      "title": "GroupUpdateResponse"
+    },
+    "KycCountryDropdown": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "title": "KycCountryDropdown",
+      "required": [
+        "value",
+        "label"
+      ]
+    },
+    "OrdinaryActivityDropDownListRequest": {
+      "type": "object",
+      "title": "OrdinaryActivityDropDownListRequest"
+    },
+    "OrdinaryActivityDropDownListResponse": {
+      "type": "object",
+      "properties": {
+        "groupDropdown": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GroupDropdown"
+          }
+        }
+      },
+      "title": "OrdinaryActivityDropDownListResponse",
+      "required": [
+        "groupDropdown"
+      ]
+    },
+    "OrdinaryActivityExport": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "groupId": {
+          "type": "string",
+          "description": " 群组id"
+        },
+        "message": {
+          "type": "string",
+          "description": " 回复内容"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间筛选条件"
+        },
+        "endTime": {
+          "type": "string",
+          "description": " 结束时间筛选条件"
+        }
+      },
+      "title": "OrdinaryActivityExport",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "groupId",
+        "message",
+        "startTime",
+        "endTime"
+      ]
+    },
+    "OrdinaryActivityExportResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrdinaryActivityResponse"
+          }
+        }
+      },
+      "title": "OrdinaryActivityExportResponse",
+      "required": [
+        "list"
+      ]
+    },
+    "OrdinaryActivityList": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "groupId": {
+          "type": "string",
+          "description": " 群组id"
+        },
+        "message": {
+          "type": "string",
+          "description": " 回复内容"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间筛选条件"
+        },
+        "endTime": {
+          "type": "string",
+          "description": " 结束时间筛选条件"
+        }
+      },
+      "title": "OrdinaryActivityList",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "groupId",
+        "message",
+        "startTime",
+        "endTime"
+      ]
+    },
+    "OrdinaryActivityListResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrdinaryActivityResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "OrdinaryActivityListResponse",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "OrdinaryActivityResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "tgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "tgUserName": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "startTime": {
+          "type": "string"
+        },
+        "kycCountry": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "phoneNum": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      },
+      "title": "OrdinaryActivityResponse",
+      "required": [
+        "id",
+        "tgId",
+        "tgUserName",
+        "message",
+        "startTime",
+        "kycCountry",
+        "country",
+        "uid",
+        "phoneNum",
+        "email"
+      ]
+    },
+    "SensitiveWordAddRequest": {
+      "type": "object",
+      "properties": {
+        "sensitiveWord": {
+          "type": "string",
+          "description": " 敏感词"
+        }
+      },
+      "title": "SensitiveWordAddRequest",
+      "required": [
+        "sensitiveWord"
+      ]
+    },
+    "SensitiveWordAddResponse": {
+      "type": "object",
+      "title": "SensitiveWordAddResponse"
+    },
+    "SensitiveWordDelRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "SensitiveWordDelRequest",
+      "required": [
+        "id"
+      ]
+    },
+    "SensitiveWordDelResponse": {
+      "type": "object",
+      "title": "SensitiveWordDelResponse"
+    },
+    "SensitiveWordListRequest": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "sensitiveWord": {
+          "type": "string",
+          "description": " 敏感词"
+        }
+      },
+      "title": "SensitiveWordListRequest",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "sensitiveWord"
+      ]
+    },
+    "SensitiveWordListResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SensitiveWordResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "SensitiveWordListResponse",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "SensitiveWordResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "sensitiveWord": {
+          "type": "string"
+        },
+        "createTime": {
+          "type": "string"
+        }
+      },
+      "title": "SensitiveWordResponse",
+      "required": [
+        "id",
+        "sensitiveWord",
+        "createTime"
+      ]
+    },
+    "UidDropdown": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "title": "UidDropdown",
+      "required": [
+        "value",
+        "label"
+      ]
+    },
+    "UserDropDownListRequest": {
+      "type": "object",
+      "title": "UserDropDownListRequest"
+    },
+    "UserDropDownListResponse": {
+      "type": "object",
+      "properties": {
+        "countryDropdown": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CountryDropdown"
+          }
+        },
+        "uidDropdown": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UidDropdown"
+          }
+        },
+        "kycCountryDropdown": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/KycCountryDropdown"
+          }
+        }
+      },
+      "title": "UserDropDownListResponse",
+      "required": [
+        "countryDropdown",
+        "uidDropdown",
+        "kycCountryDropdown"
+      ]
+    },
+    "UserListExportResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserResponse"
+          }
+        }
+      },
+      "title": "UserListExportResponse",
+      "required": [
+        "list"
+      ]
+    },
+    "UserListRequest": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码索引"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码大小"
+        },
+        "uidStatus": {
+          "type": "string",
+          "description": "  uid 绑定状态筛选"
+        },
+        "country": {
+          "type": "string",
+          "description": " tg绑定国家筛选条件"
+        },
+        "kycCountry": {
+          "type": "string",
+          "description": " tg绑定国家筛选条件"
+        },
+        "userFilter": {
+          "type": "string",
+          "description": " 输入要查找的用户"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间筛选条件"
+        },
+        "endTime": {
+          "type": "string",
+          "description": " 结束时间筛选条件"
+        }
+      },
+      "title": "UserListRequest",
+      "required": [
+        "pageIndex",
+        "pageSize",
+        "uidStatus",
+        "country",
+        "kycCountry",
+        "userFilter",
+        "startTime",
+        "endTime"
+      ]
+    },
+    "UserListResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserResponse"
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "UserListResponse",
+      "required": [
+        "list",
+        "count"
+      ]
+    },
+    "UserResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "tgId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "tgUserName": {
+          "type": "string"
+        },
+        "kycCountry": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "phoneNum": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "uidStatus": {
+          "type": "string"
+        },
+        "startTime": {
+          "type": "string"
+        }
+      },
+      "title": "UserResponse",
+      "required": [
+        "id",
+        "tgId",
+        "tgUserName",
+        "kycCountry",
+        "country",
+        "uid",
+        "phoneNum",
+        "email",
+        "uidStatus",
+        "startTime"
+      ]
+    }
+  },
+  "securityDefinitions": {
+    "apiKey": {
+      "type": "apiKey",
+      "description": "Enter JWT Bearer token **_only_**",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}

@@ -26,4 +26,3 @@ func FileExists(filename string) bool {
 	}
 	return !info.IsDir()
 }
-

@@ -2,7 +2,6 @@ package ginSwagger
 
 import (
 	"fmt"
-	"github.com/swaggo/gin-swagger/util"
 	"html/template"
 	"net/http"
 	"os"
@@ -11,13 +10,15 @@ import (
 	"strings"
 	"sync"
 
+	"xunjikeji.com.cn/gin-swagger/util"
+
 	"golang.org/x/net/webdav"
 
 	"github.com/gin-gonic/gin"
 	"github.com/swaggo/swag"
 )
 
-const(
+const (
 	BashPath = "../docs"
 )
 
@@ -169,13 +170,13 @@ func CustomWrapHandler(config *Config, handler *webdav.Handler) gin.HandlerFunc 
 		}
 
 		var (
-			path string
+			path   string
 			prefix string
 		)
 
 		if len(matches) == 0 {
 			path = urlArry[3]
-			prefix = fmt.Sprintf("/%s/%s",urlArry[1],urlArry[2])
+			prefix = fmt.Sprintf("/%s/%s", urlArry[1], urlArry[2])
 		} else {
 			path = matches[2]
 			prefix = matches[1]
@@ -203,8 +204,8 @@ func CustomWrapHandler(config *Config, handler *webdav.Handler) gin.HandlerFunc 
 			_ = index.Execute(ctx.Writer, config.toSwaggerConfig())
 		case ".json":
 			//doc, err := swag.ReadDoc(config.InstanceName)
-			fileName := fmt.Sprintf("%s/%s",BashPath, path)
-			doc,err := util.ReadJSONFile(fileName)
+			fileName := fmt.Sprintf("%s/%s", BashPath, path)
+			doc, err := util.ReadJSONFile(fileName)
 			if err != nil {
 				ctx.AbortWithStatus(http.StatusInternalServerError)
 				return

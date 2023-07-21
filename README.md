@@ -1,180 +1,92 @@
 # gin-swagger
 
-gin middleware to automatically generate RESTful API documentation with Swagger 2.0.
 
-[![Build Status](https://github.com/swaggo/gin-swagger/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/features/actions)
-[![Codecov branch](https://img.shields.io/codecov/c/github/swaggo/gin-swagger/master.svg)](https://codecov.io/gh/swaggo/gin-swagger)
-[![Go Report Card](https://goreportcard.com/badge/github.com/swaggo/gin-swagger)](https://goreportcard.com/report/github.com/swaggo/gin-swagger)
-[![GoDoc](https://godoc.org/github.com/swaggo/gin-swagger?status.svg)](https://godoc.org/github.com/swaggo/gin-swagger)
-[![Release](https://img.shields.io/github/release/swaggo/gin-swagger.svg?style=flat-square)](https://github.com/swaggo/gin-swagger/releases)
+
+## Getting started
+
+To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+
+Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+
+## Add your files
+
+- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
+- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+
+```
+cd existing_repo
+git remote add origin http://124.70.165.148:9001/golang/gin-swagger.git
+git branch -M main
+git push -uf origin main
+```
+
+## Integrate with your tools
+
+- [ ] [Set up project integrations](http://124.70.165.148:9001/golang/gin-swagger/-/settings/integrations)
+
+## Collaborate with your team
+
+- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
+- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
+- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
+- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
+- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+
+## Test and Deploy
+
+Use the built-in continuous integration in GitLab.
+
+- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
+- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
+- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
+- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
+- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+
+***
+
+# Editing this README
+
+When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+
+## Suggestions for a good README
+Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+
+## Name
+Choose a self-explaining name for your project.
+
+## Description
+Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+
+## Badges
+On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+
+## Visuals
+Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+
+## Installation
+Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
 ## Usage
+Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-### Start using it
+## Support
+Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
 
-1. Add comments to your API source code, [See Declarative Comments Format](https://github.com/swaggo/swag/blob/master/README.md#declarative-comments-format).
-2. Download [Swag](https://github.com/swaggo/swag) for Go by using:
+## Roadmap
+If you have ideas for releases in the future, it is a good idea to list them in the README.
 
-```sh
-go get -u github.com/swaggo/swag/cmd/swag
-```
+## Contributing
+State if you are open to contributions and what your requirements are for accepting them.
 
-Starting in Go 1.17, installing executables with `go get` is deprecated. `go install` may be used instead:
+For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
 
-```sh
-go install github.com/swaggo/swag/cmd/swag@latest
-```
+You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
-3. Run the [Swag](https://github.com/swaggo/swag) at your Go project root path(for instance `~/root/go-project-name`),
-   [Swag](https://github.com/swaggo/swag) will parse comments and generate required files(`docs` folder and `docs/doc.go`)
-   at `~/root/go-project-name/docs`.
+## Authors and acknowledgment
+Show your appreciation to those who have contributed to the project.
 
-```sh
-swag init
-```
+## License
+For open source projects, say how it is licensed.
 
-4. Download [gin-swagger](https://github.com/swaggo/gin-swagger) by using:
-
-```sh
-go get -u github.com/swaggo/gin-swagger
-go get -u github.com/swaggo/files
-```
-
-Import following in your code:
-
-```go
-import "github.com/swaggo/gin-swagger" // gin-swagger middleware
-import "github.com/swaggo/files" // swagger embed files
-
-```
-
-### Canonical example:
-
-Now assume you have implemented a simple api as following:
-
-```go
-// A get function which returns a hello world string by json
-func Helloworld(g *gin.Context)  {
-	g.JSON(http.StatusOK,"helloworld")
-}
-
-```
-
-So how to use gin-swagger on api above? Just follow the following guide.
-
-1. Add Comments for apis and main function with gin-swagger rules like following:
-
-```go
-// @BasePath /api/v1
-
-// PingExample godoc
-// @Summary ping example
-// @Schemes
-// @Description do ping
-// @Tags example
-// @Accept json
-// @Produce json
-// @Success 200 {string} Helloworld
-// @Router /example/helloworld [get]
-func Helloworld(g *gin.Context)  {
-	g.JSON(http.StatusOK,"helloworld")
-}
-```
-
-2. Use `swag init` command to generate a docs, docs generated will be stored at `docs/`.
-3. import the docs like this:
-   I assume your project named `github.com/go-project-name/docs`.
-
-```go
-import (
-   docs "github.com/go-project-name/docs"
-)
-```
-
-4. build your application and after that, go to http://localhost:8080/swagger/index.html ,you to see your Swagger UI.
-
-5. The full code and folder relatives here:
-
-```go
-package main
-
-import (
-   "github.com/gin-gonic/gin"
-   docs "github.com/go-project-name/docs"
-   swaggerfiles "github.com/swaggo/files"
-   ginSwagger "github.com/swaggo/gin-swagger"
-   "net/http"
-)
-// @BasePath /api/v1
-
-// PingExample godoc
-// @Summary ping example
-// @Schemes
-// @Description do ping
-// @Tags example
-// @Accept json
-// @Produce json
-// @Success 200 {string} Helloworld
-// @Router /example/helloworld [get]
-func Helloworld(g *gin.Context)  {
-   g.JSON(http.StatusOK,"helloworld")
-}
-
-func main()  {
-   r := gin.Default()
-   docs.SwaggerInfo.BasePath = "/api/v1"
-   v1 := r.Group("/api/v1")
-   {
-      eg := v1.Group("/example")
-      {
-         eg.GET("/helloworld",Helloworld)
-      }
-   }
-   r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
-   r.Run(":8080")
-
-}
-```
-
-Demo project tree, `swag init` is run at relative `.`
-
-```
-.
-├── docs
-│   ├── docs.go
-│   ├── swagger.json
-│   └── swagger.yaml
-├── go.mod
-├── go.sum
-└── main.go
-```
-
-## Multiple APIs
-
-This feature was introduced in swag v1.7.9
-
-## Configuration
-
-You can configure Swagger using different configuration options
-
-```go
-func main() {
-	r := gin.New()
-
-	ginSwagger.WrapHandler(swaggerfiles.Handler,
-		ginSwagger.URL("http://localhost:8080/swagger/doc.json"),
-		ginSwagger.DefaultModelsExpandDepth(-1))
-
-	r.Run()
-}
-```
-
-| Option                   | Type   | Default    | Description                                                                                                                                                                                                                                               |
-| ------------------------ | ------ | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| URL                      | string | "doc.json" | URL pointing to API definition                                                                                                                                                                                                                            |
-| DocExpansion             | string | "list"     | Controls the default expansion setting for the operations and tags. It can be 'list' (expands only the tags), 'full' (expands the tags and operations) or 'none' (expands nothing).                                                                       |
-| DeepLinking              | bool   | true       | If set to true, enables deep linking for tags and operations. See the Deep Linking documentation for more information.                                                                                                                                    |
-| DefaultModelsExpandDepth | int    | 1          | Default expansion depth for models (set to -1 completely hide the models).                                                                                                                                                                                |
-| InstanceName             | string | "swagger"  | The instance name of the swagger document. If multiple different swagger instances should be deployed on one gin router, ensure that each instance has a unique name (use the _--instanceName_ parameter to generate swagger documents with _swag init_). |
-| PersistAuthorization     | bool   | false      | If set to true, it persists authorization data and it would not be lost on browser close/refresh.                                                                                                                                                         |
-| Oauth2DefaultClientID    | string | ""         | If set, it's used to prepopulate the _client_id_ field of the OAuth2 Authorization dialog.                                                                                                                                                                |
+## Project status
+If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
